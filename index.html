@@ -152,7 +152,7 @@
           <h4>Pre-order the book</h4>
           <p>Get on the list to receive your copy of the forthcoming Seep City book. Sign up for email announcements at <a href="http://www.thinkwalks.org" class="text-link">thinkwalks.org</a> or:</p>
           <a href="http://joelpomerantz.com/machform/view.php?id=11159" class="btn btn-default" type="submit">Order Now</a>
-          <a href="https://youtu.be/n0IKvTEWM7Q" class="btn btn-default" type="submit">Atlas Teaser</a>
+          <a href="https://youtu.be/n0IKvTEWM7Q" class="btn btn-default" type="submit">Atlas Teaser Video</a>
 
         </div>      
       </div>
@@ -468,6 +468,16 @@
 
         }, function() {
           $('.music-info').css('display', 'none');
+        });
+
+        var scrolled = false;
+        var initScroll = $(window).scrollTop();
+
+        $(window).scroll(function() {
+          if ($(this).scrollTop() > 270 && initScroll == 0 && !scrolled) {
+            $("#carousel-example-generic").carousel('next');
+            scrolled = true;
+          }
         });
 
       });
